@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmAlunos
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class frmAdicionar
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,13 @@ Partial Class frmAlunos
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelTop = New System.Windows.Forms.Panel()
+        Me.btnAddImage = New System.Windows.Forms.Button()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.picPhoto = New System.Windows.Forms.PictureBox()
+        Me.picPhotoPreview = New System.Windows.Forms.PictureBox()
         Me.lblCurso = New System.Windows.Forms.Label()
         Me.txtCurso = New System.Windows.Forms.TextBox()
         Me.lblCod_Postal = New System.Windows.Forms.Label()
@@ -38,25 +39,19 @@ Partial Class frmAlunos
         Me.txtEndereco = New System.Windows.Forms.TextBox()
         Me.lblCod_Aluno = New System.Windows.Forms.Label()
         Me.txtCod_Aluno = New System.Windows.Forms.TextBox()
-        Me.btnPrimeiro = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.btnProximo = New System.Windows.Forms.Button()
-        Me.btnUltimo = New System.Windows.Forms.Button()
-        Me.lblRegistos = New System.Windows.Forms.Label()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnAdicionar = New System.Windows.Forms.Button()
-        Me.btnRemover = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.PanelTop.SuspendLayout()
-        CType(Me.picPhoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picPhotoPreview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelTop
         '
+        Me.PanelTop.Controls.Add(Me.btnAddImage)
         Me.PanelTop.Controls.Add(Me.lblEmail)
         Me.PanelTop.Controls.Add(Me.txtEmail)
-        Me.PanelTop.Controls.Add(Me.picPhoto)
+        Me.PanelTop.Controls.Add(Me.picPhotoPreview)
         Me.PanelTop.Controls.Add(Me.lblCurso)
         Me.PanelTop.Controls.Add(Me.txtCurso)
         Me.PanelTop.Controls.Add(Me.lblCod_Postal)
@@ -71,8 +66,17 @@ Partial Class frmAlunos
         Me.PanelTop.Controls.Add(Me.txtCod_Aluno)
         Me.PanelTop.Location = New System.Drawing.Point(12, 12)
         Me.PanelTop.Name = "PanelTop"
-        Me.PanelTop.Size = New System.Drawing.Size(776, 213)
-        Me.PanelTop.TabIndex = 0
+        Me.PanelTop.Size = New System.Drawing.Size(913, 291)
+        Me.PanelTop.TabIndex = 1
+        '
+        'btnAddImage
+        '
+        Me.btnAddImage.Location = New System.Drawing.Point(701, 218)
+        Me.btnAddImage.Name = "btnAddImage"
+        Me.btnAddImage.Size = New System.Drawing.Size(200, 23)
+        Me.btnAddImage.TabIndex = 19
+        Me.btnAddImage.Text = "Adicionar Imagem"
+        Me.btnAddImage.UseVisualStyleBackColor = True
         '
         'lblEmail
         '
@@ -91,14 +95,14 @@ Partial Class frmAlunos
         Me.txtEmail.Size = New System.Drawing.Size(375, 20)
         Me.txtEmail.TabIndex = 13
         '
-        'picPhoto
+        'picPhotoPreview
         '
-        Me.picPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picPhoto.Location = New System.Drawing.Point(623, 12)
-        Me.picPhoto.Name = "picPhoto"
-        Me.picPhoto.Size = New System.Drawing.Size(150, 150)
-        Me.picPhoto.TabIndex = 12
-        Me.picPhoto.TabStop = False
+        Me.picPhotoPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picPhotoPreview.Location = New System.Drawing.Point(701, 12)
+        Me.picPhotoPreview.Name = "picPhotoPreview"
+        Me.picPhotoPreview.Size = New System.Drawing.Size(200, 200)
+        Me.picPhotoPreview.TabIndex = 12
+        Me.picPhotoPreview.TabStop = False
         '
         'lblCurso
         '
@@ -202,129 +206,55 @@ Partial Class frmAlunos
         Me.txtCod_Aluno.Size = New System.Drawing.Size(66, 20)
         Me.txtCod_Aluno.TabIndex = 0
         '
-        'btnPrimeiro
-        '
-        Me.btnPrimeiro.Location = New System.Drawing.Point(11, 245)
-        Me.btnPrimeiro.Name = "btnPrimeiro"
-        Me.btnPrimeiro.Size = New System.Drawing.Size(48, 25)
-        Me.btnPrimeiro.TabIndex = 2
-        Me.btnPrimeiro.Text = "<<"
-        Me.btnPrimeiro.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.Location = New System.Drawing.Point(65, 245)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(32, 25)
-        Me.btnAnterior.TabIndex = 3
-        Me.btnAnterior.Text = "<"
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
-        'btnProximo
-        '
-        Me.btnProximo.Location = New System.Drawing.Point(103, 245)
-        Me.btnProximo.Name = "btnProximo"
-        Me.btnProximo.Size = New System.Drawing.Size(32, 25)
-        Me.btnProximo.TabIndex = 4
-        Me.btnProximo.Text = ">"
-        Me.btnProximo.UseVisualStyleBackColor = True
-        '
-        'btnUltimo
-        '
-        Me.btnUltimo.Location = New System.Drawing.Point(141, 245)
-        Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(48, 25)
-        Me.btnUltimo.TabIndex = 5
-        Me.btnUltimo.Text = ">>"
-        Me.btnUltimo.UseVisualStyleBackColor = True
-        '
-        'lblRegistos
-        '
-        Me.lblRegistos.AutoSize = True
-        Me.lblRegistos.Location = New System.Drawing.Point(195, 251)
-        Me.lblRegistos.Name = "lblRegistos"
-        Me.lblRegistos.Size = New System.Drawing.Size(57, 13)
-        Me.lblRegistos.TabIndex = 12
-        Me.lblRegistos.Text = "Registos : "
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Location = New System.Drawing.Point(709, 246)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 13
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Location = New System.Drawing.Point(709, 275)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 14
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
-        '
         'btnAdicionar
         '
-        Me.btnAdicionar.Location = New System.Drawing.Point(628, 246)
+        Me.btnAdicionar.Location = New System.Drawing.Point(370, 310)
         Me.btnAdicionar.Name = "btnAdicionar"
         Me.btnAdicionar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdicionar.TabIndex = 15
+        Me.btnAdicionar.TabIndex = 18
         Me.btnAdicionar.Text = "Adicionar"
         Me.btnAdicionar.UseVisualStyleBackColor = True
         '
-        'btnRemover
+        'btnCancel
         '
-        Me.btnRemover.Location = New System.Drawing.Point(628, 275)
-        Me.btnRemover.Name = "btnRemover"
-        Me.btnRemover.Size = New System.Drawing.Size(75, 23)
-        Me.btnRemover.TabIndex = 16
-        Me.btnRemover.Text = "Remover"
-        Me.btnRemover.UseVisualStyleBackColor = True
+        Me.btnCancel.Location = New System.Drawing.Point(451, 309)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.TabIndex = 17
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'btnEditar
+        'btnGuardar
         '
-        Me.btnEditar.Location = New System.Drawing.Point(547, 261)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEditar.TabIndex = 17
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.UseVisualStyleBackColor = True
+        Me.btnGuardar.Location = New System.Drawing.Point(532, 309)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 16
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'frmAlunos
+        'frmAdicionar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btnEditar)
-        Me.Controls.Add(Me.btnRemover)
+        Me.ClientSize = New System.Drawing.Size(937, 570)
         Me.Controls.Add(Me.btnAdicionar)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.lblRegistos)
-        Me.Controls.Add(Me.btnUltimo)
-        Me.Controls.Add(Me.btnProximo)
-        Me.Controls.Add(Me.btnAnterior)
-        Me.Controls.Add(Me.btnPrimeiro)
         Me.Controls.Add(Me.PanelTop)
-        Me.Name = "frmAlunos"
-        Me.Text = "Form1"
+        Me.Name = "frmAdicionar"
+        Me.Text = "frmAdicionar"
         Me.PanelTop.ResumeLayout(False)
         Me.PanelTop.PerformLayout()
-        CType(Me.picPhoto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picPhotoPreview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents PanelTop As Panel
-    Friend WithEvents btnPrimeiro As Button
-    Friend WithEvents btnAnterior As Button
-    Friend WithEvents btnProximo As Button
-    Friend WithEvents btnUltimo As Button
-    Friend WithEvents lblCod_Aluno As Label
-    Friend WithEvents txtCod_Aluno As TextBox
+    Friend WithEvents lblEmail As Label
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents picPhotoPreview As PictureBox
     Friend WithEvents lblCurso As Label
     Friend WithEvents txtCurso As TextBox
     Friend WithEvents lblCod_Postal As Label
@@ -335,13 +265,10 @@ Partial Class frmAlunos
     Friend WithEvents txtNome As TextBox
     Friend WithEvents lblEndereco As Label
     Friend WithEvents txtEndereco As TextBox
-    Friend WithEvents lblRegistos As Label
-    Friend WithEvents picPhoto As PictureBox
-    Friend WithEvents lblEmail As Label
-    Friend WithEvents txtEmail As TextBox
-    Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnCancel As Button
+    Friend WithEvents lblCod_Aluno As Label
+    Friend WithEvents txtCod_Aluno As TextBox
     Friend WithEvents btnAdicionar As Button
-    Friend WithEvents btnRemover As Button
-    Friend WithEvents btnEditar As Button
+    Friend WithEvents btnCancel As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnAddImage As Button
 End Class
