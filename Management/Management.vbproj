@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmAdicionar.Designer.vb">
+      <DependentUpon>frmAdicionar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdicionar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmAlunos.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,7 @@
       <DependentUpon>frmAlunos.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -98,6 +105,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\frmAdicionar.resx">
+      <DependentUpon>frmAdicionar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAlunos.resx">
       <DependentUpon>frmAlunos.vb</DependentUpon>
     </EmbeddedResource>
