@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.IO
+Imports System.Data.SqlClient
 Public Class frmAlunos
     '---------------------------------------------
     '---------------------------------------------
@@ -41,7 +42,8 @@ Public Class frmAlunos
                     txtCod_Postal.Text = sqlReader.Item(4)
                     txtCurso.Text = sqlReader.Item(5) '("Curso")
                     txtEmail.Text = sqlReader.Item(7) '("Email")
-                    picPhoto.Load(sqlReader.Item(8))
+                    'Dim Base64ToImage = Image.FromStream(New MemoryStream(Convert.FromBase64String(sqlReader.Item(8))))
+                    picPhoto.Image = Image.FromStream(New MemoryStream(Convert.FromBase64String(sqlReader.Item(8))))
                 End If
                 mMaxRow += 1
             End While
@@ -58,6 +60,7 @@ Public Class frmAlunos
     '---------------------------------------------
     Private Sub frmAlunos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAlunos()
+        Filltxt()
     End Sub
     '---------------------------------------------
     '---------------------------------------------

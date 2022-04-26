@@ -94,9 +94,10 @@ Partial Class frmAlunos
         'picPhoto
         '
         Me.picPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picPhoto.Location = New System.Drawing.Point(623, 12)
+        Me.picPhoto.Location = New System.Drawing.Point(572, 3)
         Me.picPhoto.Name = "picPhoto"
-        Me.picPhoto.Size = New System.Drawing.Size(150, 150)
+        Me.picPhoto.Size = New System.Drawing.Size(200, 200)
+        Me.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picPhoto.TabIndex = 12
         Me.picPhoto.TabStop = False
         '
@@ -231,6 +232,7 @@ Partial Class frmAlunos
         '
         'btnUltimo
         '
+        Me.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnUltimo.Location = New System.Drawing.Point(141, 245)
         Me.btnUltimo.Name = "btnUltimo"
         Me.btnUltimo.Size = New System.Drawing.Size(48, 25)
