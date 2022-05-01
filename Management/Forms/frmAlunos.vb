@@ -8,24 +8,18 @@ Public Class frmAlunos
     Dim sqlConnection As SqlConnection
     Dim sqlCMD As SqlCommand
     Dim mRow As Integer = 0
-    Dim mMaxRow As Integer
+    Friend Shared mMaxRow As Integer
     Dim Mode As Integer = 727 ' default
     Const Add As Integer = 0
     Const Delete As Integer = 1
     Const Edit As Integer = 2
-    '---------------------------------------------
-    '---------------------------------------------
-    Public Shared Property Cod_Aluno As String
-    Public Shared Property Nome As String
-    Public Shared Property Endereco As String
-    Public Shared Property Localidade As String
-    Public Shared Property Cod_Postal As String
-    Public Shared Property Curso As String
-    Public Shared Property FLG_Ativo As Boolean
+    Dim ofdPhoto As New OpenFileDialog
+    Dim ImageBase As String = Nothing
     '---------------------------------------------
     '---------------------------------------------
     Private Sub LoadAlunos()
         btnVisible(True)
+        addImgButton(False)
         sqlConnection = New SqlConnection(strConnection)
         Try
             strCMD = "SELECT * FROM Alunos "
@@ -42,7 +36,6 @@ Public Class frmAlunos
                     txtCod_Postal.Text = sqlReader.Item(4)
                     txtCurso.Text = sqlReader.Item(5) '("Curso")
                     txtEmail.Text = sqlReader.Item(7) '("Email")
-                    'Dim Base64ToImage = Image.FromStream(New MemoryStream(Convert.FromBase64String(sqlReader.Item(8))))
                     picPhoto.Image = Image.FromStream(New MemoryStream(Convert.FromBase64String(sqlReader.Item(8))))
                 End If
                 mMaxRow += 1
@@ -81,7 +74,7 @@ Public Class frmAlunos
                     txtCod_Postal.Text = sqlReader.Item(4)
                     txtCurso.Text = sqlReader.Item(5) '("Curso")
                     txtEmail.Text = sqlReader.Item(7) '("Email")
-                    picPhoto.Load(sqlReader.Item(8)) ' ("Photo")
+                    picPhoto.Image = Image.FromStream(New MemoryStream(Convert.FromBase64String(sqlReader.Item(8)))) ' ("Photo")
                 End If
                 i += 1
             End While
@@ -124,10 +117,9 @@ Public Class frmAlunos
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         btnVisible(True)
+        addImgButton(False)
         Try
             Select Case Mode
-                Case Add
-                    'TODO ||para fazer numa form separada||
                 Case Delete
                     strCMD = "UPDATE Alunos "
                     strCMD += "SET FLG_Ativo = 0 "
@@ -154,9 +146,9 @@ Public Class frmAlunos
                     strCMD += "Localidade ='" & txtLocalidade.Text & "', "
                     strCMD += "Cod_Postal ='" & txtCod_Postal.Text & "', "
                     strCMD += "Curso ='" & txtCurso.Text & "', "
-                    strCMD += "Email ='" & txtEmail.Text & "' "
+                    strCMD += "Email ='" & txtEmail.Text & "', "
+                    strCMD += "Photo ='" & ImageBase & "' "
                     strCMD += "WHERE Cod_Aluno = '" & txtCod_Aluno.Text & "'"
-                    'TODO ||strCMD += "Photo =" & txtEndereco.Text & "'," || fazer a converção de photo --> Base64 --> string(perhaps)|| e vice versa quando pegar a photo da database
                     Try
                         sqlConnection.Open()
                         sqlCMD = New SqlCommand(strCMD, sqlConnection)
@@ -181,7 +173,9 @@ Public Class frmAlunos
 
     Private Sub btnRemover_Click(sender As Object, e As EventArgs) Handles btnRemover.Click
         btnVisible(False)
+        addImgButton(False)
         Mode = Delete
+
     End Sub
     '---------------------------------------------
     '---------------------------------------------
@@ -191,18 +185,40 @@ Public Class frmAlunos
         btnRemover.Visible = xBool
         btnGuardar.Visible = Not xBool
         btnCancel.Visible = Not xBool
+        btnAddImage.Visible = Not xBool
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         btnVisible(True)
+        addImgButton(False)
         Filltxt()
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         btnVisible(False)
+        addImgButton(True)
         Mode = Edit
     End Sub
 
+    Private Sub btnAddImage_Click(sender As Object, e As EventArgs) Handles btnAddImage.Click
+        ofdPhoto.ShowDialog()
+        Try
+            If ofdPhoto.ShowDialog.OK Then
+                Dim ImageArray() As Byte = System.IO.File.ReadAllBytes(ofdPhoto.FileName)
+                ImageBase = Convert.ToBase64String(ImageArray)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Sub
     '---------------------------------------------
     '---------------------------------------------
+    Private Sub addImgButton(ByVal xBool As Boolean)
+        btnAddImage.Visible = xBool
+        btnAddImage.Enabled = xBool
+    End Sub
+    '---------------------------------------------
+    '---------------------------------------------
+
 End Class

@@ -23,7 +23,6 @@ Partial Class frmAdicionar
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelTop = New System.Windows.Forms.Panel()
-        Me.btnAdicionar = New System.Windows.Forms.Button()
         Me.btnAddImage = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -42,15 +41,12 @@ Partial Class frmAdicionar
         Me.txtEndereco = New System.Windows.Forms.TextBox()
         Me.lblCod_Aluno = New System.Windows.Forms.Label()
         Me.txtCod_Aluno = New System.Windows.Forms.TextBox()
-        Me.txtBase64 = New System.Windows.Forms.TextBox()
         Me.PanelTop.SuspendLayout()
         CType(Me.picPhotoPreview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelTop
         '
-        Me.PanelTop.Controls.Add(Me.txtBase64)
-        Me.PanelTop.Controls.Add(Me.btnAdicionar)
         Me.PanelTop.Controls.Add(Me.btnAddImage)
         Me.PanelTop.Controls.Add(Me.btnCancel)
         Me.PanelTop.Controls.Add(Me.btnGuardar)
@@ -74,41 +70,35 @@ Partial Class frmAdicionar
         Me.PanelTop.Size = New System.Drawing.Size(913, 291)
         Me.PanelTop.TabIndex = 1
         '
-        'btnAdicionar
-        '
-        Me.btnAdicionar.Location = New System.Drawing.Point(672, 266)
-        Me.btnAdicionar.Name = "btnAdicionar"
-        Me.btnAdicionar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdicionar.TabIndex = 18
-        Me.btnAdicionar.Text = "Adicionar"
-        Me.btnAdicionar.UseVisualStyleBackColor = True
-        '
         'btnAddImage
         '
+        Me.btnAddImage.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnAddImage.Location = New System.Drawing.Point(701, 218)
         Me.btnAddImage.Name = "btnAddImage"
         Me.btnAddImage.Size = New System.Drawing.Size(200, 23)
-        Me.btnAddImage.TabIndex = 19
+        Me.btnAddImage.TabIndex = 7
         Me.btnAddImage.Text = "Adicionar Imagem"
-        Me.btnAddImage.UseVisualStyleBackColor = True
+        Me.btnAddImage.UseVisualStyleBackColor = False
         '
         'btnCancel
         '
+        Me.btnCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnCancel.Location = New System.Drawing.Point(753, 265)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 17
+        Me.btnCancel.TabIndex = 9
         Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
+        Me.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnGuardar.Location = New System.Drawing.Point(834, 265)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 16
+        Me.btnGuardar.TabIndex = 8
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'lblEmail
         '
@@ -125,10 +115,11 @@ Partial Class frmAdicionar
         Me.txtEmail.MaxLength = 80
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(375, 20)
-        Me.txtEmail.TabIndex = 13
+        Me.txtEmail.TabIndex = 6
         '
         'picPhotoPreview
         '
+        Me.picPhotoPreview.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.picPhotoPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picPhotoPreview.Location = New System.Drawing.Point(701, 12)
         Me.picPhotoPreview.Name = "picPhotoPreview"
@@ -152,7 +143,7 @@ Partial Class frmAdicionar
         Me.txtCurso.MaxLength = 5
         Me.txtCurso.Name = "txtCurso"
         Me.txtCurso.Size = New System.Drawing.Size(66, 20)
-        Me.txtCurso.TabIndex = 10
+        Me.txtCurso.TabIndex = 5
         '
         'lblCod_Postal
         '
@@ -169,7 +160,7 @@ Partial Class frmAdicionar
         Me.txtCod_Postal.MaxLength = 8
         Me.txtCod_Postal.Name = "txtCod_Postal"
         Me.txtCod_Postal.Size = New System.Drawing.Size(66, 20)
-        Me.txtCod_Postal.TabIndex = 8
+        Me.txtCod_Postal.TabIndex = 4
         '
         'lblLocalidade
         '
@@ -186,7 +177,7 @@ Partial Class frmAdicionar
         Me.txtLocalidade.MaxLength = 30
         Me.txtLocalidade.Name = "txtLocalidade"
         Me.txtLocalidade.Size = New System.Drawing.Size(375, 20)
-        Me.txtLocalidade.TabIndex = 6
+        Me.txtLocalidade.TabIndex = 3
         '
         'lblNome
         '
@@ -203,7 +194,7 @@ Partial Class frmAdicionar
         Me.txtNome.MaxLength = 80
         Me.txtNome.Name = "txtNome"
         Me.txtNome.Size = New System.Drawing.Size(375, 20)
-        Me.txtNome.TabIndex = 4
+        Me.txtNome.TabIndex = 1
         '
         'lblEndereco
         '
@@ -239,20 +230,17 @@ Partial Class frmAdicionar
         Me.txtCod_Aluno.Size = New System.Drawing.Size(66, 20)
         Me.txtCod_Aluno.TabIndex = 0
         '
-        'txtBase64
-        '
-        Me.txtBase64.Location = New System.Drawing.Point(95, 220)
-        Me.txtBase64.Name = "txtBase64"
-        Me.txtBase64.Size = New System.Drawing.Size(375, 20)
-        Me.txtBase64.TabIndex = 20
-        '
         'frmAdicionar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(937, 570)
         Me.Controls.Add(Me.PanelTop)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmAdicionar"
+        Me.Opacity = 0.97R
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAdicionar"
         Me.PanelTop.ResumeLayout(False)
         Me.PanelTop.PerformLayout()
@@ -277,9 +265,7 @@ Partial Class frmAdicionar
     Friend WithEvents txtEndereco As TextBox
     Friend WithEvents lblCod_Aluno As Label
     Friend WithEvents txtCod_Aluno As TextBox
-    Friend WithEvents btnAdicionar As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnAddImage As Button
-    Friend WithEvents txtBase64 As TextBox
 End Class
